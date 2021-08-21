@@ -1,0 +1,27 @@
+body {
+  min-width: 300px;
+  text-align: center;
+}
+
+h2 {
+  color: #ff2626;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+div {
+  font-size: 1.1rem;
+  background-color: #fff47d;
+}
+
+#phonetic {
+  color: brown;
+  font-size: 1rem;
+}
+
+#example {
+  font-size: 1rem;
+  background-color: #9ddac6;
+}

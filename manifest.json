@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "Dictionary",
+    "version": "1.0",
+    "action": {
+        "default_icon": {
+            "16": "icon16.png",
+            "24": "icon24.png",
+            "32": "icon32.png"
+        },
+        "default_title": "Word Lookup",
+        "default_popup": "popup.html"
+    },
+    "description": "Select a word on the webpage and open popup to look up in the dictionary",
+    "icons": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "author": "SandeepKrSuman",
+    "content_scripts": [
+        {
+          "matches": [
+            "<all_urls>"
+          ],
+          "js": ["content.js"]
+        }
+      ],
+      "permissions": ["tabs"]
+
+}
