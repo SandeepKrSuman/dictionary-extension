@@ -25,7 +25,5 @@
           ],
           "js": ["content.js"]
         }
-      ],
-      "permissions": ["tabs"]
-
+      ]
 }
