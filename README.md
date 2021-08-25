@@ -1,6 +1,6 @@
 # Dictionary Extension 📕
 
-<a align="center" href="https://chrome.google.com/webstore/detail/dictionary/dlapopclhkmhhkmjhhaloapiiepbbnii"><img src="/assets/icon128.png" /></a>
+<p align="center"><a href="https://chrome.google.com/webstore/detail/dictionary/dlapopclhkmhhkmjhhaloapiiepbbnii"><img src="/assets/icon128.png" /></a></p>
 
 ---
 
