@@ -1,4 +1,4 @@
-# Dictionary Extension 📕
+# Dictionary Extension
 
 <p align="center"><a href="https://chrome.google.com/webstore/detail/dictionary/dlapopclhkmhhkmjhhaloapiiepbbnii"><img src="/assets/icon128.png" /></a></p>
 
