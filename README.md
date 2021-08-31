@@ -24,4 +24,10 @@ The codes associated with [this extension](https://chrome.google.com/webstore/de
 
 <br>
 
+### License
+
+[MIT](LICENSE) © [SandeepKrSuman](https://github.com/SandeepKrSuman)
+
+<br>
+
 <p align="center">If you like this project, don't forget to 🌟 this repo.</p>
