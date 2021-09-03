@@ -32,7 +32,7 @@ The codes associated with [this extension](https://chrome.google.com/webstore/de
 
 ### Resource
 
-Want to learn and create your own extensions? This repo might help you: [![](https://img.shields.io/badge/-Chrome%20Extensions-64C9CF?style=for-the-badge)](https://github.com/SandeepKrSuman/chrome-extensions)
+[![](https://img.shields.io/badge/-Chrome%20Extensions-64C9CF?style=for-the-badge)](https://github.com/SandeepKrSuman/chrome-extensions)
 
 <br>
 
