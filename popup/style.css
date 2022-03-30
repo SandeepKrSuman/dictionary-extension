@@ -39,6 +39,10 @@ div {
   padding: 6px 14px;
 }
 
+.hidenavigator {
+  display: none;
+}
+
 .navigator:hover {
   cursor: pointer;
   background-color: #ddd;

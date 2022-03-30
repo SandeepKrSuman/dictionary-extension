@@ -33,6 +33,9 @@ async function dictionary(query) {
         "example"
       ).innerHTML = `Example: ${json[0].meanings[0].definitions[0].example}`;
     }
+    document
+      .getElementById("navigatecontainer")
+      .classList.remove("hidenavigator");
   } else if (json.title) {
     document.getElementById("error").innerHTML = "⚠  " + json.title;
   }
