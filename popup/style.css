@@ -25,3 +25,28 @@ div {
   font-size: 1rem;
   background-color: #9ddac6;
 }
+
+.navigate-container {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.navigator {
+  text-decoration: none;
+  display: inline-block;
+  padding: 6px 14px;
+}
+
+.navigator:hover {
+  cursor: pointer;
+  background-color: #ddd;
+  color: black;
+}
+
+.previous,
+.next {
+  background-color: #f1f1f1;
+  color: black;
+}
