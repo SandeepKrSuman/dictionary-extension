@@ -7,8 +7,12 @@ function gotTabs(tabs) {
   };
 
   chrome.tabs.sendMessage(tabs[0].id, msg, function (response) {
-    if (response.swor === "error") {
-      document.getElementById("word").innerHTML = "Please select a word!";
+    if (!response) {
+      document.getElementById("phonetic").innerHTML = "Welcome!";
+      document.getElementById("example").innerHTML =
+        "Please select a word to find its definition.";
+    } else if (response.swor === "_TextNotSelected_") {
+      document.getElementById("error").innerHTML = "Please select a word!";
     } else {
       let swo = response.swor;
       swo = swo.replace(/[^a-zA-Z ]/g, "");
@@ -17,26 +21,65 @@ function gotTabs(tabs) {
   });
 }
 
+let wordef,
+  word,
+  phonetic,
+  pos,
+  defin,
+  example,
+  index = 0,
+  indlimit;
+
 async function dictionary(query) {
   let url = `https://api.dictionaryapi.dev/api/v2/entries/en/${query}`;
   let response = await fetch(url);
-  let json = await response.json();
-  if (json && !json.title) {
-    document.getElementById("word").innerHTML = json[0].word;
-    document.getElementById("phonetic").innerHTML = `${
-      json[0].phonetic ? json[0].phonetic : ""
-    }  (${json[0].meanings[0].partOfSpeech})`;
-    document.getElementById("definition").innerHTML =
-      json[0].meanings[0].definitions[0].definition;
-    if (json[0].meanings[0].definitions[0].example) {
-      document.getElementById(
-        "example"
-      ).innerHTML = `Example: ${json[0].meanings[0].definitions[0].example}`;
+  wordef = await response.json();
+  if (wordef && !wordef.title) {
+    indlimit = wordef[0].meanings.length;
+    word = wordef[0].word;
+    phonetic = wordef[0].phonetic ? wordef[0].phonetic : "";
+    index = 0;
+
+    setValues();
+
+    if (indlimit > 1) {
+      document
+        .getElementById("navigatecontainer")
+        .classList.remove("hidenavigator");
     }
-    document
-      .getElementById("navigatecontainer")
-      .classList.remove("hidenavigator");
-  } else if (json.title) {
-    document.getElementById("error").innerHTML = "⚠  " + json.title;
+  } else if (wordef.title) {
+    document.getElementById("error").innerHTML = "⚠  " + wordef.title;
+  }
+}
+
+document.getElementById("prev").addEventListener("click", handlePrevious);
+document.getElementById("next").addEventListener("click", handleNext);
+
+function handlePrevious() {
+  index = index - 1;
+  if (index < 0) index = indlimit - 1;
+  setValues();
+}
+
+function handleNext() {
+  index = index + 1;
+  if (index >= indlimit) index = 0;
+  setValues();
+}
+
+function setValues() {
+  pos = wordef[0].meanings[index].partOfSpeech;
+  defin = wordef[0].meanings[index].definitions[0].definition;
+  example = wordef[0].meanings[index].definitions[0].example
+    ? wordef[0].meanings[index].definitions[0].example
+    : null;
+
+  document.getElementById("word").innerHTML = word;
+  document.getElementById("phonetic").innerHTML = `${phonetic}  (${pos})`;
+  document.getElementById("definition").innerHTML = defin;
+  if (example) {
+    document.getElementById("example").innerHTML = `Example: ${example}`;
+  } else {
+    document.getElementById("example").innerHTML = "";
   }
 }
