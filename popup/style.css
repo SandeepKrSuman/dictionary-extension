@@ -54,3 +54,24 @@ div {
   background-color: #f1f1f1;
   color: black;
 }
+
+.searchsvg {
+  width: 17px;
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.searchanchor {
+  text-decoration: none;
+  outline: none;
+}
+
+.searchanchor:hover {
+  text-decoration: none;
+  outline: none;
+  border: none;
+}

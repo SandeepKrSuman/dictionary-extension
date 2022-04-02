@@ -27,6 +27,7 @@ let wordef,
   pos,
   defin,
   example,
+  sourceurl,
   index = 0,
   indlimit;
 
@@ -38,6 +39,7 @@ async function dictionary(query) {
     indlimit = wordef[0].meanings.length;
     word = wordef[0].word;
     phonetic = wordef[0].phonetic ? wordef[0].phonetic : "";
+    sourceurl = `https://en.wiktionary.org/wiki/${word}`;
     index = 0;
 
     setValues();
@@ -74,7 +76,9 @@ function setValues() {
     ? wordef[0].meanings[index].definitions[0].example
     : null;
 
-  document.getElementById("word").innerHTML = word;
+  document.getElementById(
+    "word"
+  ).innerHTML = `${word} <a href=${sourceurl} class="searchanchor" target="_blank"><img class="searchsvg" title="read more" src = "../assets/searchonweb.svg" alt="read more"/><a>`;
   document.getElementById("phonetic").innerHTML = `${phonetic}  (${pos})`;
   document.getElementById("definition").innerHTML = defin;
   if (example) {
