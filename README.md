@@ -24,6 +24,12 @@ The codes associated with [this extension](https://chrome.google.com/webstore/de
 
 <br>
 
+### Attribution
+
+The seamless word definitions in the dictionary extension is possible, thanks to the awesome [freeDictionaryAPI](https://github.com/meetDeveloper/freeDictionaryAPI)
+
+<br>
+
 ### License
 
 [MIT](LICENSE) © [SandeepKrSuman](https://github.com/SandeepKrSuman)
