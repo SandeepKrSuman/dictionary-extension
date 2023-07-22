@@ -1,18 +1,35 @@
+// get the currently active tab in the current window
+// and then invoke the callback function gotTabs.
 let query = { active: true, currentWindow: true };
-
 chrome.tabs.query(query, gotTabs);
+
+// function to check current url and eliminate offline urls.
+function safeUrl(url) {
+  return url.startsWith("https://") || url.startsWith("http://");
+}
+
+// callback function
 function gotTabs(tabs) {
+  // prevent offline urls to run the extension by throwing error.
+  if (!safeUrl(tabs[0].url)) {
+    document.getElementById("error").innerHTML = "Oh no!";
+    document.getElementById("definition").innerHTML = "Unsupported Page.";
+    return;
+  }
+
   let msg = {
     txt: "hello from popup",
   };
 
+  // send message to the content script
   chrome.tabs.sendMessage(tabs[0].id, msg, function (response) {
     if (!response) {
+      document.getElementById("phonetic").innerHTML =
+        "Refresh the page and try again.";
+    } else if (response.swor === "_TextNotSelected_") {
       document.getElementById("phonetic").innerHTML = "Welcome!";
       document.getElementById("example").innerHTML =
         "Please select a word to find its definition.";
-    } else if (response.swor === "_TextNotSelected_") {
-      document.getElementById("error").innerHTML = "Please select a word!";
     } else {
       let swo = response.swor;
       swo = swo.replace(/[^a-zA-Z ]/g, "");
@@ -31,6 +48,7 @@ let wordef,
   index = 0,
   indlimit;
 
+// function to fetch and show definition on the popup
 async function dictionary(query) {
   let url = `https://api.dictionaryapi.dev/api/v2/entries/en/${query}`;
   let response = await fetch(url);

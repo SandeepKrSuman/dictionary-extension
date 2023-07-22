@@ -1,17 +1,17 @@
 {
     "manifest_version": 3,
     "name": "Dictionary",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "action": {
         "default_icon": {
             "16": "assets/icon16.png",
             "24": "assets/icon24.png",
             "32": "assets/icon32.png"
         },
-        "default_title": "Word Lookup",
+        "default_title": "Dictionary",
         "default_popup": "popup/popup.html"
     },
-    "description": "Select a word on the webpage and open popup to look up in the dictionary",
+    "description": "Select a word on the webpage and open popup to instantly look up in the dictionary",
     "icons": {
       "16": "assets/icon16.png",
       "48": "assets/icon48.png",
@@ -25,5 +25,8 @@
           ],
           "js": ["content.js"]
         }
+      ],
+      "permissions": [
+        "activeTab"
       ]
 }
