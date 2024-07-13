@@ -1,6 +1,6 @@
-# Dictionary Extension
+<p align="center"><a href="https://chrome.google.com/webstore/detail/dictionary/dlapopclhkmhhkmjhhaloapiiepbbnii"><img src="/assets/featured.jpg" /></a></p>
 
-<p align="center"><a href="https://chrome.google.com/webstore/detail/dictionary/dlapopclhkmhhkmjhhaloapiiepbbnii"><img src="/assets/icon128.png" /></a></p>
+<p align="center"><i>Featured in Chrome Web Store</i></p>
 
 ---
 
@@ -9,9 +9,11 @@
 <p>It is unconventional to always open a new tab to lookup for a word's meaning while you are reading your favorite blog or when you are simply browsing and you come across a word you want to know about. This extension is here to rescue. Select a word you want to look at and click on the extension button at the top and a beautiful popup will appear with the word definition and example. Isn't this cool and conventional? Install this extension and find word definitions on the go.</p>
   
 <br>
-  
-Install this extension from [Chrome Web Store](https://chrome.google.com/webstore/detail/dictionary/dlapopclhkmhhkmjhhaloapiiepbbnii)  
-  
+
+### Installation 🧩
+
+[![](./assets/webstore.png)](https://chrome.google.com/webstore/detail/dictionary/dlapopclhkmhhkmjhhaloapiiepbbnii)
+
 <br>
 
 ### Demo 🎥
@@ -20,7 +22,7 @@ Install this extension from [Chrome Web Store](https://chrome.google.com/webstor
 
 ### Open Source
 
-The codes associated with [this extension](https://chrome.google.com/webstore/detail/dictionary/dlapopclhkmhhkmjhhaloapiiepbbnii) is completely opensourced here. Any developer can use this repository, in a fair way, as a reference to learn and show their creativity by making their own extensions.
+The codes associated with [this extension](https://chrome.google.com/webstore/detail/dictionary/dlapopclhkmhhkmjhhaloapiiepbbnii) is completely open-sourced here. Any developer can use this repository, in a fair way, as a reference to learn and show their creativity by making their own extensions.
 
 <br>
 
